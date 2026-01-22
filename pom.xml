@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.9</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>br.com.sistema</groupId>
+	<artifactId>spring-ai-gmail-assistant</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spring-ai-gmail-assistant</name>
+	<description>Microserviço inteligente para gerenciamento automatizado de emails através do Gmail usando IA generativa (Google Gemini).      Oferece funcionalidades como listagem e busca inteligente de mensagens, envio automatizado de emails,      marcação de leitura, organização de caixa de entrada e análise de conteúdo através de linguagem natural.      Integrado com Gmail API e LangChain4j para processamento de comandos em linguagem natural e automação de tarefas de email.</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	<dependencies>
+
+	<!-- SPRING WEB - Starter para aplicações web (inclui Web MVC) -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- SPRING BOOT DEVTOOLS - Ferramentas para desenvolvimento, como reinício automático e live reload -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		
+		<!-- SPRING BOOT STARTER MAIL - Suporte para envio de e-mails -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		
+		<!-- LOMBOK - Biblioteca que reduz código boilerplate, gerando automaticamente getters, setters, construtores, equals, hashCode e toString em tempo de compilação -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<!-- LANGCHAIN4J GOOGLE AI GEMINI SPRING BOOT STARTER - Integração do modelo Gemini do Google AI com LangChain4j e Spring Boot -->
+		<dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-google-ai-gemini-spring-boot-starter</artifactId>
+            <version>1.7.1-beta14</version>
+        </dependency>
+
+		<!-- LANGCHAIN4J SPRING BOOT STARTER - Integração do LangChain4j com Spring Boot -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-spring-boot-starter</artifactId>
+            <version>1.7.1-beta14</version>
+        </dependency>
+        
+        <!-- SWAGGER / SPRINGDOC - Gera documentação da API REST (OpenAPI 3) com interface Swagger UI -->
+		<dependency>
+		    <groupId>org.springdoc</groupId>
+		    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+		    <version>2.6.0</version>
+		</dependency>
+		
+		<!-- GOOGLE API CLIENT - Cliente base para Google APIs -->
+	    <dependency>
+	        <groupId>com.google.api-client</groupId>
+	        <artifactId>google-api-client</artifactId>
+	        <version>1.35.2</version>
+	        <exclusions>
+		        <exclusion>
+		            <groupId>commons-logging</groupId>
+		            <artifactId>commons-logging</artifactId>
+		        </exclusion>
+		    </exclusions>
+	    </dependency>
+	
+	    <!-- GOOGLE API SERVICES - Gmail -->
+	    <dependency>
+	        <groupId>com.google.apis</groupId>
+		    <artifactId>google-api-services-gmail</artifactId>
+		    <version>v1-rev110-1.25.0</version>
+	    </dependency>
+	
+	    <!-- GOOGLE OAUTH CLIENT - Para autenticação OAuth2 -->
+	    <dependency>
+	        <groupId>com.google.oauth-client</groupId>
+	        <artifactId>google-oauth-client</artifactId>
+	        <version>1.33.2</version>
+	    </dependency>
+	
+	    <!-- GOOGLE OAUTH CLIENT JETTY - Para abrir browser -->
+	    <dependency>
+	        <groupId>com.google.oauth-client</groupId>
+	        <artifactId>google-oauth-client-jetty</artifactId>
+	        <version>1.33.2</version>
+	    </dependency>
+	
+	    <!-- GOOGLE AUTH - Gerenciamento de credenciais -->
+	    <dependency>
+	        <groupId>com.google.auth</groupId>
+	        <artifactId>google-auth-library-oauth2-http</artifactId>
+	        <version>1.19.0</version>
+	    </dependency>
+	
+	    <!-- GOOGLE HTTP CLIENT - Cliente HTTP -->
+	    <dependency>
+	        <groupId>com.google.http-client</groupId>
+	        <artifactId>google-http-client-jackson2</artifactId>
+	        <version>1.44.1</version>
+	    </dependency>
+	    
+        <!-- SPRING TEST - Starter para testes unitários e de integração com Spring Boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
